@@ -15,8 +15,8 @@ import lombok.NoArgsConstructor;
 public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-    private String name;
+    private Integer id; 
+    private String name; // 상품명
     private Integer stock; // 재고
-    private Integer price;
+    private Integer price; // 가격
 }
