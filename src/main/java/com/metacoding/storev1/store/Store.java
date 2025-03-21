@@ -19,4 +19,8 @@ public class Store {
     private String name; // 상품명
     private Integer stock; // 재고
     private Integer price; // 가격
+
+    public void 재고감소(int qty) {
+        this.stock = this.stock - qty;
+    }
 }
