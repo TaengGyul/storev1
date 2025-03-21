@@ -32,12 +32,6 @@ public class StoreRepository {
         query.executeUpdate(); // insert, delete, update 할 때만 쓴다
     }
 
-    public List<Store> findAll() {
-        // 조건 : 오브젝트 매핑은 @Entity가 붙어야지만 가능하다. (디폴트 생성자를 호출)
-        Query query = em.createNativeQuery("select * from store_tb order by id desc", Store.class);
-        return query.getResultList();
-    }
-
     // TODO : 상세보기 1
     public Store findById(int id) {
         Query query = em.createNativeQuery("select * from store_tb where id = ?", Store.class);
@@ -52,6 +46,11 @@ public class StoreRepository {
         // return (Store) query.getSingleResult();
     }
 
+    public List<Store> findAll() {
+        // 조건 : 오브젝트 매핑은 @Entity가 붙어야지만 가능하다. (디폴트 생성자를 호출)
+        Query query = em.createNativeQuery("select * from store_tb order by id desc", Store.class);
+        return query.getResultList();
+    }
 
     public void updateById(int id, String name, String stock, String price) {
         Query query = em.createNativeQuery("update store_tb set name = ?, stock = ?, price = ? where id = ?");
