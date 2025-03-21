@@ -19,8 +19,8 @@ public class LogController {
     @GetMapping("/log")
     public String list(HttpServletRequest request) {
 
-        List<LogResponse.ListPage> listPage = logService.구매목록();
-        request.setAttribute("models", listPage);
+        List<LogResponse.ListPage> ListPage = logService.구매목록();
+        request.setAttribute("models", ListPage);
         return "log/list";
     }
     
